@@ -1,0 +1,48 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Арбитражные суды
+arb_sud.tar
+14 810 402 документов
+
+Cуды общей юрисдикции
+sou.tar
+9 147 074 документов
+
+Мировые суды
+mir_sud.tar
+9 398 347 документов
+
+Всего документов: 33 355 823.
+
+Контрольные суммы файлов (md5 hash):
+
+ddd607398ae5e7a3951441d99f9de09f  arb_sud.txt (листинг архива)
+d991a8e170636ab2a57810eeab846362  arb_sud.tar
+5cecdd53f32c82702224431df1e48240  mir_sud.txt (листинг архива)
+3f415e6c12df10c0408c379a9a5cc3bc  mir_sud.tar
+75148ec69c46ed14496fdb0a326c39dd  sou.txt (листинг архива)
+9c1026d08a5453f8355463ca0eec68c7  sou.tar
+
+Проверка md5 хэшей: md5sum %имя файла%
+Получить список файлов из архива: tar -tvf %имя файла%
+
+Надеюсь, этот скромный набор данных поможет исследователям судебной
+системы и судебной практики.
+
+DIYJustice.org
+
+-----BEGIN PGP SIGNATURE-----
+Comment: GPGTools - https://gpgtools.org
+
+iQEcBAEBCgAGBQJVCfkrAAoJEE3gRlCKQw5WRWcH/iMXZyCT3GipuJxBBNhpB+Jp
+7qKHOgN2luwP6NAs2x+3eJ0pK0BlgIbmRjn2yBGr8RqQSCpG2mI78bM5fCUATx1k
+r8cyq1yUnRzryeRUX7UKPV+D0rfVxtl+6T6RhmYosMfWixbUItels41C0PdmDj+n
+40qRLx27OsxVsm/wI6dOPtelWhJKy+kt2Tc8G/duJQOk3K5gHN3z4+E4TuC/iRXk
+NCPiAGWhOUHc/sIQGQ1q5e/W1ZGfvAS7JkAKhDabZntmEOwa1aWF8JAu6XQDae5y
+tvQORHelzAAaIvxcWIIuXvFT5xPCjoOY8UMU73iw766CO+UxV97YcFhHzumDPDg=
+=uOJ3
+-----END PGP SIGNATURE-----
+
+

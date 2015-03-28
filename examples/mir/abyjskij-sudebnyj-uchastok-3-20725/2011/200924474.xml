@@ -1,0 +1,14 @@
+<region>Республика Саха (Якутия)</region>
+<court>Абыйский судебный участок №3</court>
+<judge>Боженко Татьяна Ивановна</judge>
+<vidpr>Уголовное</vidpr>
+<case_number>1-10/2011</case_number>
+<etapd>Первая инстанция</etapd>
+<category>130</category>
+<result></result>
+<date>28.04.2011</date>
+<url>http://sakha3.yak.msudrf.ru/modules.php?name=sud_delo&op=sd&number=3606995&delo_id=1540006</url>
+<vid_dokumenta></vid_dokumenta>
+<body><![CDATA[<br />
+<b>Warning</b>:  ibase_query() [<a href='function.ibase-query'>function.ibase-query</a>]: unable to allocate memory from operating system  in <b>C:\AMIRS_WEB\program\port\showdoc.php</b> on line <b>17</b><br />
+unable to allocate memory from operating system ]]></body>

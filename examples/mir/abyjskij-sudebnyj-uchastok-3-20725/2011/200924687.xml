@@ -1,0 +1,14 @@
+<region>Республика Саха (Якутия)</region>
+<court>Абыйский судебный участок №3</court>
+<judge>Григорьев Аркадий Григорьевич</judge>
+<vidpr>Административное</vidpr>
+<case_number></case_number>
+<etapd>Первая инстанция</etapd>
+<category>ст. 15.6 ч. 1</category>
+<result></result>
+<date>17.01.2011</date>
+<url>http://sakha3.yak.msudrf.ru/modules.php?name=sud_delo&op=sd&number=3263136&delo_id=1500001</url>
+<vid_dokumenta></vid_dokumenta>
+<body><![CDATA[<br />
+<b>Warning</b>:  ibase_query() [<a href='function.ibase-query'>function.ibase-query</a>]: unable to allocate memory from operating system  in <b>C:\AMIRS_WEB\program\port\showdoc.php</b> on line <b>17</b><br />
+unable to allocate memory from operating system ]]></body>
