@@ -16,11 +16,11 @@
 # cd "suddata"; echo -e "\"documentid\",\"region\",\"court\",\"judge\",\"vidpr\",\"case_number\",\"etapd\",\"category\",\"result\",\"date\",\"url\",\"vid_dokumenta\"" > "verdicts_metadata.csv"; find examples -type f -name "*.xml" -print0 | xargs -0 -n 1 -P 4 sh -c './parse_xmls.sh "$1" >> verdicts_metadata.csv' sh;
 #
 # i.e.
-# (i)   create verdicts_metadata.csv with a header to store all metadata
-# (ii)  list all .xmls in examples and pipe it to xargs (NB: I suspect it might
-#       be a bottleneck i.t.o memory when we pipe 33m files)
+# (i)	 create verdicts_metadata.csv with a header to store all metadata
+# (ii)	list all .xmls in examples and pipe it to xargs (NB: I suspect it might
+#			 be a bottleneck i.t.o memory when we pipe 33m files)
 # (iii) initiate 4 parallel processes of ./parse_xmls.sh "documentid.xml"
-#       and append the results to verdicts_metadata.csv (and save .htmls alongside .xmls)
+#			 and append the results to verdicts_metadata.csv (and save .htmls alongside .xmls)
 #
 # Since it is an embarrasingly parallel job, we can create hundreds of workers to
 # achieve speedup on a full-scale data set.
@@ -28,7 +28,6 @@
 #
 ########
  
-
 # Get xml file name as ARGV
 xmldocumentlocation="$1"
 # ID is document name
@@ -40,14 +39,14 @@ documentid="${documentid%.*}"
 documentpath=$(dirname "${xmldocumentlocation}")
 
 # Read document contents
-xmldocument=$(cat $xmldocumentlocation)
+xmldocument=$(<$xmldocumentlocation)
 
 # Extract the body text and save it to .html
 # Time is of the essence here, so no slow AWK or sed
 bodyhtml=${xmldocument##*<body>}
 
 # Write the body text to an html 
-echo $bodyhtml > "$documentpath/$documentid.html"
+echo "$bodyhtml" > "$documentpath/$documentid.html"
 
 # Get the metadata (net of body text)
 xmlmetadata=${xmldocument%%<body*}
@@ -56,43 +55,38 @@ xmlmetadata=${xmldocument%%<body*}
 # To ensure speed, no external parsers are used
 # via http://stackoverflow.com/questions/893585/how-to-parse-xml-in-bash
 
-read_dom () {
-    local IFS=\>
-    read -d \< ENTITY CONTENT
-}
-
-while read_dom; do
-	if [[ $ENTITY = "region" ]]; then
+while IFS=\> read -d \< ENTITY CONTENT; do
+	if [ "$ENTITY" = "region" ]; then
 		region=$CONTENT
 	fi
-	if [[ $ENTITY = "court" ]]; then
+	if [ "$ENTITY" = "court" ]; then
 		court=$CONTENT
 	fi
-	if [[ $ENTITY = "judge" ]]; then
+	if [ "$ENTITY" = "judge" ]; then
 		judge=$CONTENT
 	fi
-	if [[ $ENTITY = "vidpr" ]]; then
+	if [ "$ENTITY" = "vidpr" ]; then
 		vidpr=$CONTENT
 	fi
-	if [[ $ENTITY = "case_number" ]]; then
+	if [ "$ENTITY" = "case_number" ]; then
 		case_number=$CONTENT
 	fi
-	if [[ $ENTITY = "etapd" ]]; then
+	if [ "$ENTITY" = "etapd" ]; then
 		etapd=$CONTENT
 	fi
-	if [[ $ENTITY = "category" ]]; then
+	if [ "$ENTITY" = "category" ]; then
 		category=$CONTENT
 	fi
-	if [[ $ENTITY = "result" ]]; then
+	if [ "$ENTITY" = "result" ]; then
 		result=$CONTENT
 	fi
-	if [[ $ENTITY = "date" ]]; then
+	if [ "$ENTITY" = "date" ]; then
 		date=$CONTENT
 	fi
-	if [[ $ENTITY = "url" ]]; then
+	if [ "$ENTITY" = "url" ]; then
 		url=$CONTENT
 	fi
-	if [[ $ENTITY = "vid_dokumenta" ]]; then
+	if [ "$ENTITY" = "vid_dokumenta" ]; then
 		vid_dokumenta=$CONTENT
 	fi
 done <<< "$xmlmetadata"
